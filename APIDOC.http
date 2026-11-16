@@ -1,0 +1,165 @@
+#api call for listing assessment
+
+
+###
+POST http://127.0.0.1:8000/owners/assessments/
+Content-Type: application/json
+
+{
+  "username":"sanjana",
+  "email":"sanjana1@gmail.com",
+  "password":"sanjana@123"
+}
+
+###
+GET http://127.0.0.1:8000/exam/assessments/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+
+#api call for creating assessment
+
+###
+POST http://127.0.0.1:8000/exam/assessments/
+Content-Type: application/json
+Authorization: Basic sanjana:sanjana@123
+
+{
+    "title":"PYTHON-TEST",
+    "batch":"django aug tsr",
+    "exam_date":"2026-10-29",
+    "start_time":"10:00",
+    "duration":2,
+    "language":"python"
+}
+
+#api call for retrieve assessment
+
+###
+GET http://127.0.0.1:8000/exam/assessments/6/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+
+#api call for update assessment
+
+###
+PUT http://127.0.0.1:8000/exam/assessments/10/
+Content-Type: application/json
+Authorization: Basic sanjana:sanjana@123
+
+{
+  "title": "PYTHON EXAM",
+  "batch": "PYTHON july thrissur",
+  "exam_date": "2026-10-28",
+  "start_time": "11:00:00",
+  "duration": 2.0,
+  "language": "python"
+}
+
+#api call for delete assessment
+
+###
+DELETE http://127.0.0.1:8000/exam/assessments/11/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+#api call listing questions
+
+###
+GET http://127.0.0.1:8000/assesment/6/questions/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+
+#api call for adding questions in assesment
+
+###
+POST http://127.0.0.1:8000/assesment/6/questions/
+Content-Type: application/json
+Authorization: Basic sanjana:sanjana@123
+
+{
+  "title":"best time to sell a stock",
+  "description":"write a program to the best time to sell a stock",
+  "score":20,
+  "sample_input":"[12,4,56,7,8,9]",
+  "sample_output":"56",
+  "question_number":3
+
+}
+
+#api call for retrieve question
+
+###
+GET http://127.0.0.1:8000/question/4/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+#api call for update question
+###
+PUT http://127.0.0.1:8000/question/4/
+Content-Type: application/json
+Authorization: Basic sanjana:sanjana@123
+
+{
+  "title": "best time to sell a stock",
+  "description": "write a program to the best time to sell a stock",
+  "score": 20,
+  "sample_input": "[12,4,5,6,7,8,9]",
+  "sample_output": "12",
+  "question_number": 3
+}
+
+#api call for delete questions
+
+###
+DELETE http://127.0.0.1:8000/question/4/
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+
+#api call for creating student
+###
+POST http://127.0.0.1:8000/student/register/
+Content-Type: application/json
+
+{
+  "username":"cinju",
+  "email":"cinjuu1@gmail.com",
+  "password":"cinju@123"
+}
+
+#api call start submission
+###
+POST http://127.0.0.1:8000/assessment/6/submission/
+Content-Type: application/json
+Authorization: Basic cinju:cinju@123
+
+#submission detail
+###
+GET  http://127.0.0.1:8000/submission//
+Accept: application/json
+Authorization: Basic sanjana:sanjana@123
+
+#api call for adding answer
+###
+POST http://127.0.0.1:8000/submission/3/answer/
+Content-Type: application/json
+Authorization: Basic achu:achu@123
+
+{
+  "question":5,
+  "answer_text":"print('goodmorning')"
+}
+
+#api call for update answers
+###
+PATCH http://127.0.0.1:8000/answers/3/
+Content-Type: application/json
+Authorization: Basic sanjana:sanjana@123
+
+{
+  "marks_awarded":5,
+  "feedback":"partial logic"
+}
